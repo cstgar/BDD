@@ -17,7 +17,7 @@ namespace Practica1_ClienteServidor_Sockets
             {
                 try
                 {
-                    IPAddress ipAd = IPAddress.Parse("25.0.248."); // IP del servidor
+                    IPAddress ipAd = IPAddress.Parse("25.0.248.40"); // IP del servidor
                     int port = 6515; // Usamos el puerto 6515 según tu configuración
                     TcpListener myList = new TcpListener(ipAd, port);
 
