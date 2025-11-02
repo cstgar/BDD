@@ -36,7 +36,7 @@ namespace Practica1_ClienteServidor_Sockets
                     string cadena = Encoding.ASCII.GetString(b, 0, k);
                     Console.WriteLine("Cadena recibida: " + cadena);
 
-                    string conectSQL = "Data Source=CIANRA;Initial Catalog=Nueva_BDD_Practica1; User Id=cinthia;Password=Astro123; TrustServerCertificate=True;";
+                    string conectSQL = "Data Source=CIANRA;Initial Catalog=Nueva_BDD_Practica1; User Id=practicasbdd;Password=Astro123; TrustServerCertificate=True;";
                     using (SqlConnection cm = new SqlConnection(conectSQL))
                     {
                         cm.Open();
@@ -48,6 +48,7 @@ namespace Practica1_ClienteServidor_Sockets
                     s.Send(response);
                     Console.WriteLine("Confirmación enviada");
 
+                    s.Shutdown(SocketShutdown.Both);
                     s.Close();
                     myList.Stop();
                 }
